@@ -1,0 +1,4 @@
+DBHOST='127.0.0.1'
+DBUSER='toword'
+DBDATABASE='toword'
+DBPASSWORD='toword'

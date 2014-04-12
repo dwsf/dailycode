@@ -1,0 +1,56 @@
+# #!/usr/bin/python
+# #coding:utf-8
+# #author:zsc347
+# #create on:2013-8-28
+# 
+# import urllib2
+# import re
+# import sys
+# 
+# def get_url(word):
+# 	prefix="http://www.iciba.com/"
+# 	return prefix+word
+# 
+# def get_content(url):
+# 	return urllib2.urlopen(url).read()
+# 
+# def get_css_class(css_class,content):
+# 	#print content
+# 	#patt=r"<.*\s+class=\"%s\"[^>]*>([^<]*)</[^>]*>" % css_class
+# 	#patt=r"<.*\s+class=\"%s\"[^>]*>" % css_class
+# 	print patt
+# 	return re.search(patt,content).group()
+# 
+# def get_meaning(content):
+# 	#css_class="group_pos"
+# 	#patt=r"<div class=\"group_pos\">(.*)</div>"
+# 	patt=r"<div class=\"group_pos\">(.*?)</div>"
+# 	#print patt
+# 	meaning=re.search(patt,content,re.S).group(1)
+# 	meaning=re.sub('\s','',meaning)
+# 	meaning=re.sub('</p>','\n',meaning)
+# 	meaning=re.sub('</strong>','\t',meaning)
+# 	meaning=re.sub('<[^>]*>','',meaning)
+# 	return '\n'+ meaning
+# 
+# 
+# if __name__=="__main__":
+# 	def test():
+# 		url="http://www.baidu.com"
+# 		s=urllib2.urlopen(url).read()
+# 		print s
+# 	def main():
+# 		if len(sys.argv) <2:
+# 			while True:
+# 				s=raw_input("input:")
+# 				if s!="q":
+# 					print get_meaning(get_content(get_url(s)))
+# 			#print "input error!"
+# 			#return -1
+# 		word=sys.argv[1]
+# 		#css_class="group_pos"
+# 		url=get_url(word)
+# 		content=get_content(url)
+# 		need=get_meaning(content)
+# 		print need
+# 	main()
